@@ -15,7 +15,7 @@ const SignIN = () => {
   const isAuth = localStorage.getItem("token");
   let navigate = useNavigate();
   return (
-    <>
+    <div className='form'>
     <Navbar />
     <div  className="forms-sign">
     <form method="get" action="javascript: void(0);" id="login-form" className="login-form" autocomplete="off" role="main" onSubmit={(e) => e.preventDefault()}>
@@ -51,7 +51,7 @@ const SignIN = () => {
 
 </form>
 </div>
-</>
+</div>
   )
 }
 

@@ -92,5 +92,31 @@ router.post("/login", loginRules(), validation, async (req, res) => {
 router.get("/current", isAuth(), (req, res) => {
   res.status(200).send({ user: req.user });
 });
-
+router.get("/all", async (req, res) => {
+  try {
+    const result = await User.find();
+    res.send({ list: result, msg: "list of User" });
+  } catch (error) {
+    console.log(error);
+  }
+});
+router.delete("/:id", async (req, res) => {
+  try {
+    const result = await User.findByIdAndDelete({ _id: req.params.id });
+    res.send({ msg: "user deleted" });
+  } catch (error) {
+    console.log(error);
+  }
+});
+router.put("/:id", async (req, res) => {
+  try {
+    const result = await User.findByIdAndUpdate(
+      { _id: req.params.id },
+      { $set: { ...req.body } }
+    );
+    res.send({ msg: "user updated" });
+  } catch (error) {
+    console.log(error);
+  }
+});
 module.exports = router;

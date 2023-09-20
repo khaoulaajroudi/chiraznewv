@@ -19,7 +19,6 @@ dispatch(getcommande())
       <>
         
         <div class="container">
-      
 <div className="card">
   <div className="card-image">
     <img src={data.photo} />
@@ -32,7 +31,7 @@ dispatch(getcommande())
   </div>
   <div className='box'>
   <div className="card-price">{data.price}DT</div>
-  <button className='container1' onClick={()=>dispatch(addcommande(newcommande))}><i class="fa-solid fa-cart-shopping">
+  <button className='container1' onClick={()=>dispatch(addcommande(newcommande))}><i class="fa-solid fa-cart-shopping  fa-2x">
         </i></button>
   </div>
  </div>

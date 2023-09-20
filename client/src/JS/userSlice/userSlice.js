@@ -31,7 +31,31 @@ export const userCurrent = createAsyncThunk("user/current", async () => {
     console.log(error);
   }
 });
+export const getuser=createAsyncThunk('user/get',async()=>{
+  try{
+let result=axios.get('http://localhost:5000/user/all')
+return result
+  }catch(error){
+  console.log(error)
+  }
+})
+export const deleteuser=createAsyncThunk('user/delete',async(id)=>{
+  try{
+let result=axios.delete(`http://localhost:5000/user/${id}`)
+return result
+  }catch(error){
+  console.log(error)
+  }
+})
 
+export const updateuser=createAsyncThunk('user/update',async({id, user})=>{
+  try{
+let result=axios.put(`http://localhost:5000/user/${id}`,user)
+return result
+  }catch(error){
+  console.log(error)
+  }
+})
 const initialState = {
   user: null,
   status: null,
@@ -79,6 +103,36 @@ export const userSlice = createSlice({
     [userCurrent.rejected]: (state) => {
       state.status = "fail";
     },
+    [getuser.pending]:(state)=>{
+      state.status="pending";
+  },
+  [getuser.fulfilled]:(state,action)=>{
+      state.status="success";
+      state.user=action.payload?.data?.list
+  },
+  [getuser.rejected]:(state,action)=>{
+      state.status="failed";
+  },
+  [deleteuser.pending]:(state)=>{
+      state.status="pending";
+  },
+  [deleteuser.fulfilled]:(state,action)=>{
+      state.status="success";
+  },
+  [deleteuser.rejected]:(state,action)=>{
+      state.status="failed";
+  },
+  [updateuser.pending]:(state)=>{
+      state.status="pending";
+  },
+  [updateuser.fulfilled]:(state,action)=>{
+      state.status="success";
+      state.user=action.payload?.data?.user
+  },
+  [updateuser.rejected]:(state,action)=>{
+      state.status="failed";
+  }
+
   },
 });
 

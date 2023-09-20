@@ -6,7 +6,7 @@ import List from '../../Cards/List'
 
 const Navbaradmin = () => {
   return (
-    <div className='box-menu'>
+    <>
     <div className='navbarr'>
   <div className='nav-logo'>
         <img src='./images/logo.png' alt='logo'></img>
@@ -21,22 +21,7 @@ const Navbaradmin = () => {
       </button>
       </div>
 </div>
-<div className='box-content'>
-<div className='menu'>
-    <ul className='link'>
-     <li><i class="fa-solid fa-address-card"></i><Link to="/dashbord"> Profil</Link></li>
-        <li><i class="fa-solid fa-users"></i><Link to="/produits"> Gestion Produits</Link></li>
-        <li><i class="fa-solid fa-paste"></i><Link to='/users'> Gestion users</Link></li>
-        <li><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</li>
-    </ul>
-
-</div>
-
-<div className='content'>
- 
-</div>
-</div>
-</div>
+</>
   )
 }
 

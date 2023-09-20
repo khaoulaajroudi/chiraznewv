@@ -15,12 +15,12 @@ const List = () => {
     const user=useSelector((store)=>store.user?.user)
     console.log(user)
   return (
-    <>
+    <div className='form'>
     <Navbar />
     <div className='list-product'>
       {produits?.map((el)=><Card  data={el} user={user}/>)}
     </div>
-    </>
+    </div>
   )
 }
 

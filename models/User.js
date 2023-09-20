@@ -20,6 +20,10 @@ const UserSchema = new schema({
     type: String,
     required: true,
   },
+  avatar:{
+    type:String,
+    default:"https://img.freepik.com/premium-vector/man-avatar-profile-round-icon_24640-14044.jpg?w=2000"
+  },
   isadmin:{
     type:Boolean,
     default:false

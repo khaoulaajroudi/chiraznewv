@@ -29,13 +29,13 @@
     object-position:bottom;
   }
   .card-text{
-    margin:-30px auto;
-    margin-bottom:-50px;
-    height:300px;
-    width:300px;
-    background-color:#1D1C20;
-    color:#fff;
-    padding:20px;
+    margin: -30px auto;
+    margin-bottom: -50px;
+    height: 170px;
+    width: 300px;
+    background-color: #1D1C20;
+    color: #fff;
+    padding: 20px;
   }
   .card-meal-type{
     font-style:italic;
@@ -56,24 +56,26 @@
     margin-top: 40px;
     }
   .card-price{
-    background-color:#970C0A;
-    color:#fff;
-    margin-left:auto;
-    width:100px;
-    height:60px;
-    font-size:220;
-    display:flex;
-    align-items:center;
+    background-color: #970C0A;
+    color: #fff;
+    width: 139px;
+    height: 60px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .container1 {
-    margin-left:auto;
     width:60px;
     height:60px;
-    font-size:220;
     display:flex;
     align-items:center;
+    justify-content: center;
   } 
-
+  .container1 i{
+    color: orangered;
+    width: 300px;
+  }
 button {
 	background-color: #fff700;
 	color: black;
@@ -108,6 +110,7 @@ button > div:nth-child(6) {
 .list-product{
   display: flex;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 
